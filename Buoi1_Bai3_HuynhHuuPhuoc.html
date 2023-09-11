@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var Dolphins = {
+            firstScore: 0,
+            secondScore: 0,
+            thirdScore: 0,
+            avgScore: function () {
+                return ((this.firstScore+this.secondScore+this.thirdScore)/3).toFixed(2)
+            }
+        }
+        var Koalas = {
+            firstScore: 0,
+            secondScore: 0,
+            thirdScore: 0,
+            avgScore: function () {
+                return ((this.firstScore+this.secondScore+this.thirdScore)/3).toFixed(2)
+            }
+        }
+
+        const checkTeamWin= function(){
+            if(Dolphins.avgScore()>=100&Koalas.avgScore()>=100){
+                if(Dolphins.avgScore()>Koalas.avgScore()){
+                    console.log("Dolphins is the winner because Dolphins = "+Dolphins.avgScore()+" and Koalas = "+Koalas.avgScore())
+                }
+                else if(Dolphins.avgScore()<Koalas.avgScore()){
+                    console.log("Koalas is the winner because Dolphins = "+Dolphins.avgScore()+" and Koalas = "+Koalas.avgScore())
+                }
+                else {
+                    console.log("The match is draw  because Dolphins = "+Dolphins.avgScore()+" and Koalas = "+Koalas.avgScore())
+                }
+            }
+            else{
+                console.log("Both team are lose because Dolphins = "+Dolphins.avgScore()+" and Koalas = "+Koalas.avgScore())
+            }
+        }
+
+        //data1
+        Dolphins.firstScore = 96
+        Dolphins.secondScore = 108
+        Dolphins.thirdScore = 89 
+        Koalas.firstScore = 88
+        Koalas.secondScore = 91
+        Koalas.thirdScore = 110
+
+        checkTeamWin()
+
+         //data2
+        Dolphins.firstScore = 97
+        Dolphins.secondScore = 112
+        Dolphins.thirdScore = 101 
+        Koalas.firstScore = 109
+        Koalas.secondScore = 95
+        Koalas.thirdScore = 123
+
+        checkTeamWin()
+        
+        
+        
+
+    </script>
+</body>
+</html>

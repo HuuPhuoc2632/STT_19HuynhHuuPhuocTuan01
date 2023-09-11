@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bill = {
+            price: 275,
+            tip: ()=>{
+                return  bill.price>=50||bill.price<=300 ? 0.15 : 0.2
+            },
+            total: ()=>{
+                return (bill.price*(1+bill.tip())).toFixed(2)
+            }
+        }
+        showBillDetail = ()=>{
+            console.log("The bill was "+bill.price+", the tip was "+bill.price*bill.tip()+", and the total value "+bill.total())
+        }
+        showBillDetail()
+
+        bill.price=40
+        showBillDetail()
+        
+        bill.price=430
+        showBillDetail()
+
+    </script>
+</body>
+</html>

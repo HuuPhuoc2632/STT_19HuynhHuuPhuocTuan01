@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var calcAverage= function (a, b, c) {
+            return ((a+b+c)/3).toFixed(2)
+        }
+        var Dolphins = {
+            firstScore: 0,
+            secondScore: 0,
+            thirdScore: 0,
+            avgDolphins: ()=>{
+                return calcAverage(Dolphins.firstScore, Dolphins.secondScore, Dolphins.thirdScore)
+            }
+        }
+        var Koalas = {
+            firstScore: 0,
+            secondScore: 0,
+            thirdScore: 0,
+            avgKoalas:  ()=>{
+                return calcAverage(Koalas.firstScore, Koalas.secondScore, Koalas.thirdScore)
+            }
+        }
+        
+
+        const checkWinner= function(avgD, avgK){
+            console.log(avgD)
+                if(avgD>=avgK*2){
+                    console.log("Dolphins is the winner because Dolphins = "+Dolphins.avgDolphins()+" and Koalas = "+Koalas.avgKoalas())
+                }
+                else if(avgD*2<=avgK){
+                    console.log("Koalas is the winner because Dolphins = "+Dolphins.avgDolphins()+" and Koalas = "+Koalas.avgKoalas())
+                }
+                else {
+                    console.log("The match isn't winner  because Dolphins = "+Dolphins.avgDolphins()+" and Koalas = "+Koalas.avgKoalas())
+                }
+            }
+        
+
+        //data1
+        Dolphins.firstScore = 44
+        Dolphins.secondScore = 23
+        Dolphins.thirdScore = 71
+        Koalas.firstScore = 65
+        Koalas.secondScore = 54
+        Koalas.thirdScore = 49
+
+        checkWinner(Dolphins.avgDolphins(), Koalas.avgKoalas())
+
+         //data2
+        Dolphins.firstScore = 85
+        Dolphins.secondScore = 54
+        Dolphins.thirdScore = 41 
+        Koalas.firstScore = 23
+        Koalas.secondScore = 34
+        Koalas.thirdScore = 27
+
+        checkWinner(Dolphins.avgDolphins(), Koalas.avgKoalas())
+        
+        
+        
+
+    </script>
+</body>
+</html>
