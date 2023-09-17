@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bill = {
+            price: 0,
+            tip: ()=>{
+                return  bill.price>=50||bill.price<=300 ? 0.15 : 0.2
+            },
+            total: ()=>{
+                return (bill.price*(1+bill.tip())).toFixed(2)
+            }
+        }
+        calcTip= ()=>{
+            return bill.price*bill.tip()
+        }
+        var billArray = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+        var tipArray = []
+        var totalArray = []
+
+        billArray.forEach(element => {
+            bill.price = element
+            tipArray.push(calcTip())
+            totalArray.push((bill.price*(1+bill.tip())).toFixed(2))
+        });
+
+        console.log("Bill: "+billArray)
+        console.log("Tips: "+tipArray)
+        console.log("Total: "+totalArray)
+        calcAverage = (array)=>{
+            var sum = 0
+            array.forEach(element => {
+                sum+=parseInt(element)
+            });
+            return sum/array.length
+        }
+        console.log("Average: "+calcAverage(totalArray))
+
+    </script>
+</body>
+</html>
